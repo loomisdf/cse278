@@ -1,0 +1,3 @@
+1. Do we have to write math functions for both int and float formats
+2. We get the two binary numbahs, should we do the math then, or convert to decimal then perform the mathematics. 
+3. 
