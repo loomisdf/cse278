@@ -51,7 +51,7 @@ void convert_to_octal (char input[2][33], char **output) {
   *output = out;
 }
 
-performCalculation(char *calculation, ) {
+performCalculation(char **calculation) {
   //Check for add, sub, mul, div
 }
 
@@ -65,8 +65,10 @@ int main() {
   scanf("%s", input[1]);
 
   char* numFormat;
-  printf("Enter the binary numeric format(int or float):\n");
-  scanf("%s", numFormat);
+  do {
+    printf("Enter the binary numeric format(int or float):\n");
+    scanf("%s", numFormat);
+  } while(numFormat != "float" || numFormat != "int");
 
   char* calculation;
   printf("Enter the calculation to perform(add, sub, mul, div):");
