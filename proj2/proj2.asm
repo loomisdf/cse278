@@ -2,12 +2,12 @@ global	main						;name this program the main function
 extern printf, scanf				;define external functions that are called
 
 section		.data
-    msg: 		db "enter the first number in binary format:",0xA,0
+	msg: 		db "enter the first number in binary format:",0xA,0
 	msg2: 		db "enter the second number in binary format:",0xA,0
 	msgCalc: 	db "Enter the calculation to perform(add,sub,mul,div):",0xA,0 
-    fmtScanf: 	db "%s",0				;scanf format string
-    fmtPrintf: 	db "%s",0xA,0		;printf format string
-    fmtResult: 	db "%d",0xA,0		;printf format string
+	fmtScanf: 	db "%s",0				;scanf format string
+	fmtPrintf: 	db "%s",0xA,0		;printf format string
+	fmtResult: 	db "%d",0xA,0		;printf format string
 	fmtOutput:  db "The result for %d %c %d is:",0xA,"binary = %s",0xA,0
 	bitmask: 	dw 0
 	one:		db '1'
@@ -17,7 +17,7 @@ section		.data
 	sDiv: 		db "div",0 
 
 section 	.bss
-    input1: 	resb 100					;declare array of 100 bytes
+	input1: 	resb 100					;declare array of 100 bytes
 	input2: 	resb 100
 	calculation:resb 100
 	output: 	resb 33
@@ -28,16 +28,16 @@ section 	.bss
 
 section 	.text
 main:
-    PUSH	msg			; print: enter the first number in binary format	
-    CALL	printf	
-    ADD 	esp, 4		
+	PUSH	msg			; print: enter the first number in binary format	
+	CALL	printf	
+	ADD 	esp, 4		
 	
-    SUB		esp, 4		; store the input
+	SUB		esp, 4		; store the input
 	MOV 	DWORD [esp], input1		
 	SUB 	esp, 4
-    MOV 	DWORD [esp], fmtScanf			
-    CALL 	scanf					
-    ADD 	esp, 8						
+	MOV 	DWORD [esp], fmtScanf			
+	CALL 	scanf					
+	ADD 	esp, 8						
 	
 	PUSH 	msg2		; print: enter the second number in binary format
 	CALL 	printf
@@ -181,4 +181,4 @@ incLoop:
 	PUSH 	fmtOutput
 	CALL 	printf
 	ADD 	esp, 20
-    ret								;end program
+	ret								;end program
