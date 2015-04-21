@@ -109,7 +109,7 @@ doNotOr2:
 	ADD 	ecx, 1
 	CMP 	ecx, 32
 	JNE		LP2
-	
+
 ;	FLD 	dword [val2]
 ;	FSTP 	qword [val264]
 ;	PUSH 	dword [val264 + 4]
@@ -168,15 +168,15 @@ LP3:
 	MOV 	eax, [calculationResult]
 	MOV 	ebx, 31
 	SUB 	ebx, ecx
-	BT 	eax, ebx
-	JC 	found1
+	BT 		eax, ebx
+	JC 		found1
 	JMP 	found0
 found1:
 	MOV 	ebx, 49
 	JMP 	incLoop
 found0:
 	MOV 	ebx, 48
-	JMP	incLoop
+	JMP		incLoop
 incLoop:
 	MOV 	[output + ecx], bl
 	add 	ecx, 1
